@@ -40,7 +40,7 @@ def generate_dataset(n_rows: int = 20_000, seed: int = 42) -> pd.DataFrame:
     )
 
     # True churn mechanism. The effect of monthly_charges GROWS over time
-    # (concept drift), so a random split overestimates real-world quality.
+    # (concept drift), so a random split does not reflect real future performance.
     logit = (
         -3.0
         + 0.45 * df["support_calls"]
